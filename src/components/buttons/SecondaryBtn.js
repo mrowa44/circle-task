@@ -6,19 +6,17 @@ import PropTypes from 'prop-types';
 function SecondaryBtn(props) {
   const {
     children,
-    type = 'button',
+    type,
     onClick,
   } = props;
   return (
-    <>
-      <button
-        type={type}
-        onClick={onClick}
-        className="border rounded-md px-8 hover:bg-gray-50"
-      >
-        {children}
-      </button>
-    </>
+    <button
+      type={type}
+      onClick={onClick}
+      className="border rounded-md px-8 hover:bg-gray-50"
+    >
+      {children}
+    </button>
   );
 }
 
