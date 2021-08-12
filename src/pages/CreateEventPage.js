@@ -2,11 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import PageLayout from '../PageLayout';
+import EventForm from '../components/EventForm';
 
 function CreateEventPage(props) {
   const { history } = props;
   const handleAction = () => {
     history.push('/edit/1');
+  };
+  const handleSubmit = (data) => {
+    console.log(data);
+    // Send data to API
   };
   return (
     <PageLayout
@@ -14,7 +19,10 @@ function CreateEventPage(props) {
       onPageAction={handleAction}
       pageActionLabel="Edit"
     >
-      create page
+      <EventForm
+        onSubmit={handleSubmit}
+        submitLabel="Create event"
+      />
     </PageLayout>
   );
 }
