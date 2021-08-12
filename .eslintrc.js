@@ -20,5 +20,10 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': [2, { extensions: ['.js'] }],
     'react/jsx-props-no-spreading': 0,
+    'jsx-a11y/label-has-for': [2, {
+      required: {
+        every: ['id'],
+      },
+    }],
   },
 };
