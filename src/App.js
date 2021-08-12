@@ -1,16 +1,22 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 import './index.css';
-import PageLayout from './PageLayout';
+import CreateEventPage from './pages/CreateEventPage';
+import EditEventPage from './pages/EditEventPage';
 
 function App() {
   return (
-    <PageLayout
-      headerText="Event form"
-      onPageAction={() => {}}
-      pageActionLabel="Edit"
-    >
-      text
-    </PageLayout>
+    <Router>
+      <Switch>
+        <Route path="/create" component={CreateEventPage} />
+        <Route path="/edit/:id" component={EditEventPage} />
+        <Route exact path="/" component={CreateEventPage} />
+      </Switch>
+    </Router>
   );
 }
 
