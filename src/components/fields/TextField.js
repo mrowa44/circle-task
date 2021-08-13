@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { useController } from 'react-hook-form';
 
@@ -17,6 +18,7 @@ function TextField(props) {
     name,
     control,
     rules,
+    defaultValue: '',
   });
   return (
     <>
@@ -30,8 +32,11 @@ function TextField(props) {
         <input
           {...field}
           id={name}
-          placeholder={placeholder}
-          className="block w-full px-5 py-2.5 border-red-300 text-gray-600 placeholder-gray-400 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm rounded-md"
+          placeholder={error ? '' : placeholder}
+          className={cx('block w-full px-5 py-2.5 border border-gray-200 text-gray-600 placeholder-gray-400 focus:outline-none focus:border-indigo-500 sm:text-sm rounded-md', {
+            'bg-red-50': error,
+            'border-red-600': error,
+          })}
         />
       </div>
       <p className="mt-3 text-xs text-red-600">

@@ -31,6 +31,9 @@ function EventForm(props) {
       <RadioGroup
         control={control}
         name="place"
+        rules={{
+          required: { value: true, message: 'Where is required' },
+        }}
       >
         <RadioSegment name="virtual">
           <img src={globeIcon} alt="" />
