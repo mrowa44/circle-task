@@ -8,6 +8,7 @@ import RadioSegment from './fields/RadioSegment';
 import RadioGroup from './fields/RadioGroup';
 import DateTimePicker from './fields/DateTimePicker';
 import Select from './fields/Select';
+import TextArea from './fields/TextArea';
 import globeIcon from '../assets/open_icon.svg';
 import privateIcon from '../assets/private icon.svg';
 
@@ -25,7 +26,7 @@ function EventForm(props) {
     mode: 'onBlur',
   });
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-start">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-start pb-20">
       <TextField
         name="name"
         label="Event name"
@@ -86,6 +87,12 @@ function EventForm(props) {
           />
         </div>
       </div>
+      <TextArea
+        name="description"
+        label="Description"
+        placeholder="Write a summary about your event"
+        register={register}
+      />
       <PrimaryBtn type="submit">
         {submitLabel}
       </PrimaryBtn>

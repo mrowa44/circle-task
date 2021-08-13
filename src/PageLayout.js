@@ -17,7 +17,7 @@ function PageLayout(props) {
         <button type="button" className="block ml-auto mt-5 mr-5 hover:opacity-70">
           <img src={crossIcon} alt="close" />
         </button>
-        <div className="max-w-xl m-auto mt-20 flex justify-between">
+        <div className="max-w-xl m-auto mt-20 mb-8 flex justify-between">
           <h1 className="text-4xl font-bold text-gray-800">
             {headerText}
           </h1>
