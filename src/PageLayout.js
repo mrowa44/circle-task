@@ -26,8 +26,8 @@ function PageLayout(props) {
           </SecondaryBtn>
         </div>
       </header>
-      <main className="h-full bg-gray-100 px-4 sm:px-0">
-        <div className="max-w-xl m-auto mt-16">
+      <main className="bg-gray-100 sm:px-0">
+        <div className="max-w-xl m-auto mt-16 pb-40">
           {children}
         </div>
       </main>
