@@ -6,6 +6,7 @@ import PrimaryBtn from './buttons/PrimaryBtn';
 import TextField from './fields/TextField';
 import RadioSegment from './fields/RadioSegment';
 import RadioGroup from './fields/RadioGroup';
+import DateTimePicker from './fields/DateTimePicker';
 import globeIcon from '../assets/open_icon.svg';
 import privateIcon from '../assets/private icon.svg';
 
@@ -25,7 +26,6 @@ function EventForm(props) {
         name="name"
         label="Event name"
         placeholder="Event name"
-        control={control}
         register={register}
         rules={{
           required: { value: true, message: 'Event name is required' },
@@ -57,6 +57,17 @@ function EventForm(props) {
           </div>
         </RadioSegment>
       </RadioGroup>
+      <div className="font-semibold text-xl mt-14 mb-5">
+        When
+      </div>
+      <div className="block text-base font-medium text-gray-500 mb-3">
+        Set date and time
+      </div>
+      <DateTimePicker
+        placeholder="Date & time"
+        name="datetime"
+        control={control}
+      />
       <PrimaryBtn type="submit">
         {submitLabel}
       </PrimaryBtn>

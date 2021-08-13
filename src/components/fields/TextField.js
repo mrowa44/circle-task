@@ -39,8 +39,7 @@ function TextField(props) {
 }
 
 TextField.propTypes = {
-  control: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-  error: PropTypes.string,
+  error: PropTypes.shape({ message: PropTypes.string }),
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
