@@ -7,16 +7,20 @@ import TextField from './fields/TextField';
 import RadioSegment from './fields/RadioSegment';
 import RadioGroup from './fields/RadioGroup';
 import DateTimePicker from './fields/DateTimePicker';
+import Select from './fields/Select';
 import globeIcon from '../assets/open_icon.svg';
 import privateIcon from '../assets/private icon.svg';
+
+const DURATION_OPTIONS = ['1h', '2h', '3h', '4h', '5h'];
 
 function EventForm(props) {
   const { onSubmit, submitLabel } = props;
   const {
-    handleSubmit,
     control,
-    register,
     formState: { errors },
+    handleSubmit,
+    register,
+    watch,
   } = useForm({
     mode: 'onBlur',
   });
@@ -63,11 +67,25 @@ function EventForm(props) {
       <div className="block text-base font-medium text-gray-500 mb-3">
         Set date and time
       </div>
-      <DateTimePicker
-        placeholder="Date & time"
-        name="datetime"
-        control={control}
-      />
+      <div className="flex w-full">
+        <div className="flex-1 mr-5">
+          <DateTimePicker
+            placeholder="Date & time"
+            name="datetime"
+            control={control}
+            className="mr-5"
+          />
+        </div>
+        <div className="flex-1">
+          <Select
+            options={DURATION_OPTIONS}
+            name="duration"
+            placeholder="Duration"
+            register={register}
+            watch={watch}
+          />
+        </div>
+      </div>
       <PrimaryBtn type="submit">
         {submitLabel}
       </PrimaryBtn>

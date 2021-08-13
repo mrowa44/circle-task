@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -18,7 +18,7 @@ function DateTimePicker(props) {
           showTimeSelect
           dateFormat="Pp"
           placeholderText={placeholder}
-          className="py-2.5 px-5 rounded-md focus:border-indigo-500 border border-gray-200 focus:outline-none placeholder-gray-400 text-gray-600 sm:text-sm"
+          className="py-2.5 px-5 rounded-md focus:border-indigo-500 border border-gray-200 focus:outline-none placeholder-gray-400 text-gray-600 sm:text-sm w-full"
         />
       )}
     />
