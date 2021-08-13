@@ -9,7 +9,7 @@ import RadioGroup from './fields/RadioGroup';
 import DateTimePicker from './fields/DateTimePicker';
 import Select from './fields/Select';
 import TextArea from './fields/TextArea';
-import SlugInput from './fields/SlugInput'
+import SlugInput from './fields/SlugInput';
 import globeIcon from '../assets/open_icon.svg';
 import privateIcon from '../assets/private icon.svg';
 
@@ -27,7 +27,7 @@ function EventForm(props) {
     mode: 'onBlur',
   });
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-start">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-start px-4 sm:px-0">
       <TextField
         name="name"
         label="Event name"
@@ -48,7 +48,7 @@ function EventForm(props) {
           required: { value: true, message: 'Where is required' },
         }}
       >
-        <RadioSegment name="virtual">
+        <RadioSegment name="virtual" className="mr-2 sm:mr-5">
           <img src={globeIcon} alt="" />
           <div className="text-base text-center">Virtual</div>
           <div className="text-center text-xs text-gray-400">

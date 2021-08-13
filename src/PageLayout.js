@@ -14,7 +14,7 @@ function PageLayout(props) {
   return (
     <div className="min-h-full h-full flex flex-col">
       <header className="h-60 px-4 sm:px-0">
-        <button type="button" className="block ml-auto mt-5 mr-5 hover:opacity-70">
+        <button type="button" className="block ml-auto mt-5 sm:mr-5 hover:opacity-70">
           <img src={crossIcon} alt="close" />
         </button>
         <div className="max-w-xl m-auto mt-20 mb-8 flex justify-between">
