@@ -1,25 +1,16 @@
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import { useController } from 'react-hook-form';
 
 function TextField(props) {
   const {
-    control,
     label,
     name,
     placeholder,
     rules,
+    register,
+    error,
   } = props;
-  const {
-    field,
-    fieldState: { error },
-  } = useController({
-    name,
-    control,
-    rules,
-    defaultValue: '',
-  });
   return (
     <>
       <label
@@ -30,12 +21,13 @@ function TextField(props) {
       </label>
       <div className="mt-1 relative rounded-md shadow-sm w-full">
         <input
-          {...field}
+          {...register(name, rules)}
           id={name}
           placeholder={error ? '' : placeholder}
-          className={cx('block w-full px-5 py-2.5 border border-gray-200 text-gray-600 placeholder-gray-400 focus:outline-none focus:border-indigo-500 sm:text-sm rounded-md', {
+          className={cx('block w-full px-5 py-2.5 border border-gray-200 text-gray-600 placeholder-gray-400 focus:outline-none sm:text-sm rounded-md', {
             'bg-red-50': error,
             'border-red-600': error,
+            'focus:border-indigo-500': !error,
           })}
         />
       </div>
@@ -48,13 +40,16 @@ function TextField(props) {
 
 TextField.propTypes = {
   control: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  error: PropTypes.string,
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
+  register: PropTypes.func.isRequired,
   rules: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 TextField.defaultProps = {
+  error: null,
   rules: {},
 };
 

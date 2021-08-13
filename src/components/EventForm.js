@@ -11,7 +11,12 @@ import privateIcon from '../assets/private icon.svg';
 
 function EventForm(props) {
   const { onSubmit, submitLabel } = props;
-  const { handleSubmit, control } = useForm({
+  const {
+    handleSubmit,
+    control,
+    register,
+    formState: { errors },
+  } = useForm({
     mode: 'onBlur',
   });
   return (
@@ -21,9 +26,11 @@ function EventForm(props) {
         label="Event name"
         placeholder="Event name"
         control={control}
+        register={register}
         rules={{
           required: { value: true, message: 'Event name is required' },
         }}
+        error={errors.name}
       />
       <div className="font-semibold text-xl mt-14 mb-5">
         Where
