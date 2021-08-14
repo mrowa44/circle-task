@@ -8,7 +8,7 @@ function getButtonClass(variant) {
     case 'primary':
       return 'rounded-md px-8 py-2.5 text-white bg-indigo-500 hover:bg-indigo-600 font-bold';
     case 'secondary':
-      return 'border rounded-md px-8 hover:border-indigo-600 hover:text-indigo-600 text-gray-600 font-medium';
+      return 'border rounded-md px-8 hover:border-indigo-600 hover:text-indigo-600 text-gray-600 font-medium text-sm';
     default:
       return '';
   }
