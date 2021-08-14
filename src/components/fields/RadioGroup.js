@@ -8,9 +8,7 @@ function RadioGroup(props) {
     name,
     rules,
   } = props;
-  const {
-    control,
-  } = useFormContext();
+  const { control } = useFormContext();
   const {
     field,
     fieldState: { error },
