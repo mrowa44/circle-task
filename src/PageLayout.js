@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import SecondaryBtn from './components/buttons/SecondaryBtn';
+import Button from './components/Button';
 import crossIcon from './assets/cross.svg';
 
 function PageLayout(props) {
@@ -21,9 +21,9 @@ function PageLayout(props) {
           <h1 className="text-4xl font-bold text-gray-800">
             {headerText}
           </h1>
-          <SecondaryBtn onClick={onPageAction}>
+          <Button variant="secondary" onClick={onPageAction}>
             {pageActionLabel}
-          </SecondaryBtn>
+          </Button>
         </div>
       </header>
       <main className="bg-gray-100 sm:px-0 flex-1">

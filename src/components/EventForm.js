@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import PropTypes from 'prop-types';
 
-import PrimaryBtn from './buttons/PrimaryBtn';
+import Button from './Button';
 import TextField from './fields/TextField';
 import RadioSegment from './fields/RadioSegment';
 import RadioGroup from './fields/RadioGroup';
@@ -112,9 +112,9 @@ function EventForm(props) {
         placeholder="custom URL"
         register={register}
       />
-      <PrimaryBtn type="submit">
+      <Button variant="primary" type="submit">
         {submitLabel}
-      </PrimaryBtn>
+      </Button>
     </form>
   );
 }

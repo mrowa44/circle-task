@@ -3,32 +3,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function SecondaryBtn(props) {
+function getButtonClass(variant) {
+  switch (variant) {
+    case 'primary':
+      return 'rounded-md px-8 py-2.5 text-white bg-indigo-500 hover:bg-indigo-400';
+    case 'secondary':
+      return 'border rounded-md px-8 hover:bg-gray-50';
+    default:
+      return '';
+  }
+}
+
+function Button(props) {
   const {
     children,
-    type,
     onClick,
+    type,
+    variant,
   } = props;
   return (
     <button
       type={type}
       onClick={onClick}
-      className="border rounded-md px-8 hover:bg-gray-50"
+      className={getButtonClass(variant)}
     >
       {children}
     </button>
   );
 }
 
-SecondaryBtn.propTypes = {
+Button.propTypes = {
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
   type: PropTypes.oneOf(['button', 'submit']),
+  variant: PropTypes.oneOf(['primary', 'secondary']),
 };
 
-SecondaryBtn.defaultProps = {
+Button.defaultProps = {
   onClick: () => {},
   type: 'button',
+  variant: 'primary',
 };
-
-export default SecondaryBtn;
+export default Button;
