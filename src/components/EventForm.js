@@ -16,16 +16,28 @@ import privateIcon from '../assets/private icon.svg';
 const DURATION_OPTIONS = ['1h', '2h', '3h', '4h', '5h'];
 
 function EventForm(props) {
-  const { onSubmit, submitLabel } = props;
+  const {
+    initialValues,
+    onSubmit,
+    submitLabel,
+  } = props;
   const {
     control,
     formState: { errors },
     handleSubmit,
     register,
+    reset,
     watch,
   } = useForm({
     mode: 'onBlur',
   });
+
+  React.useEffect(() => {
+    if (initialValues) {
+      reset(initialValues);
+    }
+  }, [initialValues, reset]);
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-start px-4 sm:px-0">
       <TextField
@@ -110,6 +122,19 @@ function EventForm(props) {
 EventForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   submitLabel: PropTypes.string.isRequired,
+  initialValues: PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+    place: PropTypes.oneOf(['in-person', 'virtual']),
+    datetime: PropTypes.instanceOf(Date),
+    duration: PropTypes.string,
+    description: PropTypes.string,
+    slug: PropTypes.string,
+  }),
+};
+
+EventForm.defaultProps = {
+  initialValues: {},
 };
 
 export default EventForm;
