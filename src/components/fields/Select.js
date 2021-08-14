@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { useFormContext } from 'react-hook-form';
 
 import Icon from '../Icon';
 
@@ -9,9 +10,8 @@ function Select(props) {
     name,
     options,
     placeholder,
-    register,
-    watch,
   } = props;
+  const { register, watch } = useFormContext();
   const value = watch(name);
   const isDefaultValue = !value;
   return (
@@ -44,8 +44,6 @@ Select.propTypes = {
   name: PropTypes.string.isRequired,
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
   placeholder: PropTypes.string.isRequired,
-  register: PropTypes.func.isRequired,
-  watch: PropTypes.func.isRequired,
 };
 
 export default Select;

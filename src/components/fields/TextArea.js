@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useFormContext } from 'react-hook-form';
 
 function TextArea(props) {
   const {
     label,
     name,
     placeholder,
-    register,
   } = props;
+  const { register } = useFormContext();
   return (
     <>
       <label
@@ -31,7 +32,6 @@ TextArea.propTypes = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
-  register: PropTypes.func.isRequired,
 };
 
 export default TextArea;

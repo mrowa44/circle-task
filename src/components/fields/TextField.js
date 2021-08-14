@@ -1,16 +1,17 @@
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+import { useFormContext } from 'react-hook-form';
 
 function TextField(props) {
+  const { register, formState: { errors } } = useFormContext();
   const {
     label,
     name,
     placeholder,
     rules,
-    register,
-    error,
   } = props;
+  const error = errors[name];
   return (
     <>
       <label
@@ -39,16 +40,13 @@ function TextField(props) {
 }
 
 TextField.propTypes = {
-  error: PropTypes.shape({ message: PropTypes.string }),
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
-  register: PropTypes.func.isRequired,
   rules: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 TextField.defaultProps = {
-  error: null,
   rules: {},
 };
 
