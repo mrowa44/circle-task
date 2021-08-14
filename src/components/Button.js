@@ -6,9 +6,9 @@ import PropTypes from 'prop-types';
 function getButtonClass(variant) {
   switch (variant) {
     case 'primary':
-      return 'rounded-md px-8 py-2.5 text-white bg-indigo-500 hover:bg-indigo-400';
+      return 'rounded-md px-8 py-2.5 text-white bg-indigo-500 hover:bg-indigo-600 font-bold';
     case 'secondary':
-      return 'border rounded-md px-8 hover:bg-gray-50';
+      return 'border rounded-md px-8 hover:border-indigo-600 hover:text-indigo-600 text-gray-600 font-medium';
     default:
       return '';
   }
