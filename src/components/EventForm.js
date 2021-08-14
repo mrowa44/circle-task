@@ -26,7 +26,7 @@ function EventForm(props) {
     formState: { errors },
     handleSubmit,
     register,
-    setValue,
+    reset,
     watch,
   } = useForm({
     mode: 'onBlur',
@@ -34,11 +34,10 @@ function EventForm(props) {
 
   React.useEffect(() => {
     if (initialValues) {
-      Object.keys(initialValues).forEach((key) => {
-        setValue(key, initialValues[key]);
-      });
+      reset(initialValues);
     }
-  }, [initialValues]);
+  }, [initialValues, reset]);
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-start px-4 sm:px-0">
       <TextField
