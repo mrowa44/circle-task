@@ -24,7 +24,7 @@ function TextField(props) {
           {...register(name, rules)}
           id={name}
           placeholder={error ? '' : placeholder}
-          className={cx('block w-full px-5 py-2.5 border border-gray-200 text-gray-600 placeholder-gray-400 focus:outline-none sm:text-sm rounded-md', {
+          className={cx('block w-full px-5 py-2.5 border border-gray-200 text-gray-600 placeholder-gray-400 focus:outline-none sm:text-sm rounded-md appearance-none', {
             'bg-red-50': error,
             'border-red-600': error,
             'focus:border-indigo-500': !error,
