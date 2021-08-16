@@ -21,7 +21,7 @@ function SlugInput(props) {
       >
         {label}
       </label>
-      <div className="slug-input__input-wrapper">
+      <div className="slug-input__wrapper">
         <span className="slug-input__base">
           {BASE_URL}
         </span>

@@ -2,7 +2,7 @@
   @apply block text-base font-medium text-gray-500 mb-3;
 }
 
-.slug-input__input-wrapper {
+.slug-input__wrapper {
   @apply mt-1 flex rounded-md mb-11 w-full;
 }
 
