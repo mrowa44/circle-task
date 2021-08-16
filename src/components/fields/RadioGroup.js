@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useController, useFormContext } from 'react-hook-form';
 
+import './RadioGroup.css';
+
 function RadioGroup(props) {
   const {
     children,
@@ -15,7 +17,7 @@ function RadioGroup(props) {
   } = useController({ name, control, rules });
   return (
     <>
-      <div className="flex" key={field.value}>
+      <div className="radio-group__container" key={field.value}>
         {React.Children.map(children, (child) => {
           if (!React.isValidElement(child)) {
             return null;
@@ -29,7 +31,7 @@ function RadioGroup(props) {
           });
         })}
       </div>
-      <p className="mt-6 text-xs text-red-600">
+      <p className="radio-group__error">
         {error?.message}
       </p>
     </>

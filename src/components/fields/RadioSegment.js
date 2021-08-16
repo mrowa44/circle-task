@@ -2,46 +2,60 @@ import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
+import Icon, { ICONS } from '../Icon';
+import './RadioSegment.css';
+
 function RadioSegment(props) {
   const {
     checked,
-    children,
-    className,
+    icon,
     name,
     onChange,
+    spaced,
+    text,
+    title,
   } = props;
   return (
     <label
       htmlFor={name}
-      className={cx('border border-gray-200 py-6 px-2 sm:px-4 bg-white rounded-lg sm:w-44 flex flex-col items-center hover:bg-gray-50 cursor-pointer', {
-        'border-indigo-500': checked,
-      }, className)}
+      className={cx('radio-segment', {
+        'radio-segment--checked': checked,
+        'radio-segment--spaced': spaced,
+      })}
     >
       <input
         id={name}
         name={name}
         value={name}
         type="radio"
-        className="hidden"
+        className="radio-segment__input"
         onChange={onChange}
       />
-      {children}
+      <Icon type={icon} />
+      <div className="radio-segment__title">
+        {title}
+      </div>
+      <div className="radio-segment__text">
+        {text}
+      </div>
     </label>
   );
 }
 
 RadioSegment.propTypes = {
   checked: PropTypes.bool,
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
+  icon: PropTypes.oneOf(Object.keys(ICONS)).isRequired,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
+  spaced: PropTypes.bool,
+  text: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 RadioSegment.defaultProps = {
   checked: false,
-  className: '',
   onChange: () => {},
+  spaced: false,
 };
 
 export default RadioSegment;

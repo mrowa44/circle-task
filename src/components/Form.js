@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useForm, FormProvider } from 'react-hook-form';
 
+import './Form.css';
+
 function Form(props) {
   const {
     children,
@@ -19,7 +21,7 @@ function Form(props) {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)} className="flex flex-col items-start px-4 sm:px-0">
+      <form onSubmit={methods.handleSubmit(onSubmit)} className="form">
         {children}
       </form>
     </FormProvider>

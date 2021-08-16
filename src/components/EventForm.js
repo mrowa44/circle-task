@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import Button from './Button';
 import Form from './Form';
-import Icon from './Icon';
 import TextField from './fields/TextField';
 import RadioSegment from './fields/RadioSegment';
 import RadioGroup from './fields/RadioGroup';
@@ -11,6 +10,7 @@ import DateTimePicker from './fields/DateTimePicker';
 import Select from './fields/Select';
 import TextArea from './fields/TextArea';
 import SlugInput from './fields/SlugInput';
+import './EventForm.css';
 
 const DURATION_OPTIONS = ['1h', '2h', '3h', '4h', '5h'];
 
@@ -35,7 +35,7 @@ function EventForm(props) {
           required: { value: true, message: 'Event name is required' },
         }}
       />
-      <div className="font-semibold text-xl mt-9 mb-5 tracking-wide text-gray-800">
+      <div className="event-form__subtitle">
         Where
       </div>
       <RadioGroup
@@ -44,36 +44,34 @@ function EventForm(props) {
           required: { value: true, message: 'Where is required' },
         }}
       >
-        <RadioSegment name="virtual" className="mr-2 sm:mr-5">
-          <Icon type="open" />
-          <div className="text-base text-center my-3 text-gray-800">Virtual</div>
-          <div className="text-center text-xs text-gray-400">
-            Nulla facilisi. Donec aliquam leo sed eros consectetur, vel
-          </div>
-        </RadioSegment>
-        <RadioSegment name="in-person">
-          <Icon type="private" />
-          <div className="text-base text-center my-3 text-gray-800">In person</div>
-          <div className="text-center text-xs text-gray-400">
-            Nulla facilisi. Donec aliquam leo sed eros consectetur, vel
-          </div>
-        </RadioSegment>
+        <RadioSegment
+          spaced
+          name="virtual"
+          icon="open"
+          title="Virtual"
+          text="Nulla facilisi. Donec aliquam leo sed eros consectetur, vel"
+        />
+        <RadioSegment
+          name="in-person"
+          icon="private"
+          title="In person"
+          text="Nulla facilisi. Donec aliquam leo sed eros consectetur, vel"
+        />
       </RadioGroup>
-      <div className="font-semibold text-xl mt-9 mb-5 tracking-wide text-gray-800">
+      <div className="event-form__subtitle">
         When
       </div>
-      <div className="block text-base font-medium text-gray-500 mb-3">
+      <div className="event-form__field-label">
         Set date and time
       </div>
-      <div className="flex w-full">
-        <div className="flex-1 mr-5">
+      <div className="event-form__row">
+        <div className="event-form__row-item event-form__row-item--spaced">
           <DateTimePicker
             placeholder="Date & time"
             name="datetime"
-            className="mr-5"
           />
         </div>
-        <div className="flex-1">
+        <div className="event-form__row-item">
           <Select
             options={DURATION_OPTIONS}
             name="duration"

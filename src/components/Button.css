@@ -1,0 +1,13 @@
+.btn {
+  @apply rounded-md px-8 py-2.5;
+}
+
+.btn-primary {
+  @apply text-white font-bold bg-indigo-500;
+  @apply hover:bg-indigo-600;
+}
+
+.btn-secondary {
+  @apply border text-gray-600 font-medium text-sm;
+  @apply hover:border-indigo-600 hover:text-indigo-600;
+}

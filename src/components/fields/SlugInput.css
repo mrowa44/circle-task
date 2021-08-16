@@ -1,0 +1,16 @@
+.slug-input__label {
+  @apply block text-base font-medium text-gray-500 mb-3;
+}
+
+.slug-input__wrapper {
+  @apply mt-1 flex rounded-md mb-11 w-full;
+}
+
+.slug-input__base {
+  @apply inline-flex items-center px-5 rounded-l-md border border-r-0 border-gray-200 bg-white text-gray-500 text-sm;
+}
+
+.slug-input__input {
+  @apply flex-1 min-w-0 block w-full px-5 py-2.5 rounded-none rounded-r-md text-sm border-gray-200 border text-gray-600 appearance-none;
+  @apply focus:border-indigo-500 focus:outline-none;
+}

@@ -1,0 +1,16 @@
+.datetime-picker {
+  @apply flex;
+}
+
+.datetime-picker__picker {
+  @apply py-2.5 px-5 rounded-md border border-gray-200 placeholder-gray-400 text-gray-600 text-sm w-full appearance-none;
+  @apply focus:border-indigo-500 focus:outline-none;
+}
+
+.datetime-picker__icon-container {
+  @apply relative;
+}
+
+.datetime-picker__icon-wrapper {
+  @apply absolute z-10 w-7 right-0 mr-4 top-1/2 transform -translate-y-1/2;
+}
