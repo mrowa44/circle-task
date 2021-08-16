@@ -1,0 +1,22 @@
+.text-field__label {
+  @apply block text-base font-medium text-gray-500 mb-3;
+}
+
+.text-field__input-container {
+  @apply mt-1 w-full;
+}
+
+.text-field__input {
+  @apply block w-full px-5 py-2.5 border border-gray-200 text-gray-600 placeholder-gray-400 text-sm rounded-md appearance-none;
+  @apply focus:outline-none focus:border-indigo-500;
+}
+
+.text-field__input--error {
+  @apply bg-red-50 border-red-600;
+  @apply focus:border-red-600;
+}
+
+.text-field__error {
+  @apply mt-3 text-xs text-red-600;
+}
+

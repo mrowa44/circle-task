@@ -1,0 +1,12 @@
+.radio-segment {
+  @apply border border-gray-200 py-6 px-2 sm:px-4 bg-white rounded-lg sm:w-44 flex flex-col items-center cursor-pointer;
+  @apply hover:bg-gray-50;
+}
+
+.radio-segment--checked {
+  @apply border-indigo-500;
+}
+
+.radio-segment__input {
+  @apply hidden;
+}

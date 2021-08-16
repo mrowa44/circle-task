@@ -2,6 +2,8 @@ import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
+import './RadioSegment.css';
+
 function RadioSegment(props) {
   const {
     checked,
@@ -13,8 +15,8 @@ function RadioSegment(props) {
   return (
     <label
       htmlFor={name}
-      className={cx('border border-gray-200 py-6 px-2 sm:px-4 bg-white rounded-lg sm:w-44 flex flex-col items-center hover:bg-gray-50 cursor-pointer', {
-        'border-indigo-500': checked,
+      className={cx('radio-segment', {
+        'radio-segment--checked': checked,
       }, className)}
     >
       <input
@@ -22,7 +24,7 @@ function RadioSegment(props) {
         name={name}
         value={name}
         type="radio"
-        className="hidden"
+        className="radio-segment__input"
         onChange={onChange}
       />
       {children}

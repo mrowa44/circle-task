@@ -11,6 +11,7 @@ import DateTimePicker from './fields/DateTimePicker';
 import Select from './fields/Select';
 import TextArea from './fields/TextArea';
 import SlugInput from './fields/SlugInput';
+import './EventForm.css';
 
 const DURATION_OPTIONS = ['1h', '2h', '3h', '4h', '5h'];
 
@@ -26,7 +27,6 @@ function EventForm(props) {
       onSubmit={onSubmit}
       formProps={{ mode: 'onBlur' }}
       initialValues={initialValues}
-      className="flex flex-col items-start px-4 sm:px-0"
     >
       <TextField
         name="name"
@@ -36,7 +36,7 @@ function EventForm(props) {
           required: { value: true, message: 'Event name is required' },
         }}
       />
-      <div className="font-semibold text-xl mt-9 mb-5 tracking-wide text-gray-800">
+      <div className="event-form__subtitle">
         Where
       </div>
       <RadioGroup
@@ -60,21 +60,20 @@ function EventForm(props) {
           </div>
         </RadioSegment>
       </RadioGroup>
-      <div className="font-semibold text-xl mt-9 mb-5 tracking-wide text-gray-800">
+      <div className="event-form__subtitle">
         When
       </div>
-      <div className="block text-base font-medium text-gray-500 mb-3">
+      <div className="event-form__field-label">
         Set date and time
       </div>
-      <div className="flex w-full">
-        <div className="flex-1 mr-5">
+      <div className="event-form__row">
+        <div className="event-form__row-item event-form__row-item--spaced">
           <DateTimePicker
             placeholder="Date & time"
             name="datetime"
-            className="mr-5"
           />
         </div>
-        <div className="flex-1">
+        <div className="event-form__row-item">
           <Select
             options={DURATION_OPTIONS}
             name="duration"

@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useFormContext } from 'react-hook-form';
 
+import './TextArea.css';
+
 function TextArea(props) {
   const {
     label,
@@ -13,7 +15,7 @@ function TextArea(props) {
     <>
       <label
         htmlFor={name}
-        className="block text-base font-medium text-gray-500 mb-3 mt-10"
+        className="text-area__label"
       >
         {label}
       </label>
@@ -22,7 +24,7 @@ function TextArea(props) {
         id={name}
         name={name}
         placeholder={placeholder}
-        className="py-4 px-5 sm:text-sm w-full h-40 rounded-md border border-gray-200 focus:outline-none focus:border-indigo-500 mb-8 appearance-none text-gray-600"
+        className="text-area__input"
       />
     </>
   );

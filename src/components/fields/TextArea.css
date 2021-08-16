@@ -1,0 +1,8 @@
+.text-area__label {
+  @apply block text-base font-medium text-gray-500 mb-3 mt-10;
+}
+
+.text-area__input {
+  @apply py-4 px-5 text-sm w-full h-40 rounded-md border border-gray-200 mb-8 appearance-none text-gray-600;
+  @apply focus:outline-none focus:border-indigo-500;
+}

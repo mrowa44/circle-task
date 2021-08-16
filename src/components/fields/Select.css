@@ -1,0 +1,12 @@
+.select {
+  @apply relative;
+}
+
+.select__dropdown {
+  @apply py-2.5 px-5 rounded-md border border-gray-200 text-sm w-full appearance-none bg-white;
+  @apply focus:border-indigo-500 focus:outline-none;
+}
+
+.select__icon-wrapper {
+  @apply absolute right-0 mr-4 top-1/2 transform -translate-y-1/2
+}

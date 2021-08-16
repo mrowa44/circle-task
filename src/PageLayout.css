@@ -1,0 +1,28 @@
+.layout-container {
+  @apply min-h-full h-full flex flex-col;
+}
+
+.header {
+  @apply h-60 px-4 sm:px-0;
+}
+
+.header__close-button {
+  @apply block ml-auto mt-5 sm:mr-5;
+  @apply hover:opacity-70;
+}
+
+.header__content {
+  @apply max-w-xl m-auto mt-20 mb-8 flex justify-between;
+}
+
+.header__text {
+  @apply text-4xl font-bold text-gray-800;
+}
+
+.main {
+  @apply bg-gray-100 flex-1;
+}
+
+.main__content {
+  @apply sm:max-w-xl m-auto mt-14 pb-40;
+}

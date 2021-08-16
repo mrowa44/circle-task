@@ -4,6 +4,7 @@ import cx from 'classnames';
 import { useFormContext } from 'react-hook-form';
 
 import Icon from '../Icon';
+import './Select.css';
 
 function Select(props) {
   const {
@@ -15,13 +16,13 @@ function Select(props) {
   const value = watch(name);
   const isDefaultValue = !value;
   return (
-    <label htmlFor={name} className="relative">
+    <label htmlFor={name} className="select">
       <select
         {...register(name)}
         id={name}
         name={name}
         defaultValue=""
-        className={cx('py-2.5 px-5 rounded-md focus:border-indigo-500 border border-gray-200 focus:outline-none sm:text-sm w-full appearance-none bg-white', {
+        className={cx('select__dropdown', {
           'text-gray-400': isDefaultValue,
           'text-gray-600': !isDefaultValue,
         })}
@@ -35,7 +36,7 @@ function Select(props) {
           </option>
         ))}
       </select>
-      <div className="absolute right-0 mr-4 top-1/2 transform -translate-y-1/2">
+      <div className="select__icon-wrapper">
         <Icon type="chevron" />
       </div>
     </label>

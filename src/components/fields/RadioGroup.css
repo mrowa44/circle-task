@@ -1,0 +1,7 @@
+.radio-group__container {
+  @apply flex;
+}
+
+.radio-group__error {
+  @apply mt-6 text-xs text-red-600;
+}

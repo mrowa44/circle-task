@@ -1,0 +1,19 @@
+.event-form__subtitle {
+  @apply font-semibold text-xl mt-9 mb-5 tracking-wide text-gray-800
+}
+
+.event-form__field-label {
+  @apply block text-base font-medium text-gray-500 mb-3;
+}
+
+.event-form__row {
+  @apply flex w-full;
+}
+
+.event-form__row-item {
+  @apply flex-1;
+}
+
+.event-form__row-item--spaced {
+  @apply mr-5;
+}
