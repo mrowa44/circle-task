@@ -5,7 +5,6 @@ import { useForm, FormProvider } from 'react-hook-form';
 function Form(props) {
   const {
     children,
-    className,
     formProps,
     initialValues,
     onSubmit,
@@ -20,7 +19,7 @@ function Form(props) {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)} className={className}>
+      <form onSubmit={methods.handleSubmit(onSubmit)} className="flex flex-col items-start px-4 sm:px-0">
         {children}
       </form>
     </FormProvider>
@@ -29,7 +28,6 @@ function Form(props) {
 
 Form.propTypes = {
   children: PropTypes.node.isRequired,
-  className: PropTypes.string,
   formProps: PropTypes.shape({
     mode: PropTypes.oneOf(['onChange', 'onBlur', 'onSubmit', 'onTouched']),
   }),
@@ -38,7 +36,6 @@ Form.propTypes = {
 };
 
 Form.defaultProps = {
-  className: '',
   initialValues: {},
   formProps: {},
 };

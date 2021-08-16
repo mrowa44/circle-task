@@ -26,7 +26,6 @@ function EventForm(props) {
       onSubmit={onSubmit}
       formProps={{ mode: 'onBlur' }}
       initialValues={initialValues}
-      className="flex flex-col items-start px-4 sm:px-0"
     >
       <TextField
         name="name"
