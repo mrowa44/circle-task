@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Button from './Button';
-import Icon from './Icon';
 import Form from './Form';
+import Icon from './Icon';
 import TextField from './fields/TextField';
 import RadioSegment from './fields/RadioSegment';
 import RadioGroup from './fields/RadioGroup';
@@ -36,7 +36,7 @@ function EventForm(props) {
           required: { value: true, message: 'Event name is required' },
         }}
       />
-      <div className="font-semibold text-xl mt-14 mb-5">
+      <div className="font-semibold text-xl mt-9 mb-5 tracking-wide text-gray-800">
         Where
       </div>
       <RadioGroup
@@ -47,20 +47,20 @@ function EventForm(props) {
       >
         <RadioSegment name="virtual" className="mr-2 sm:mr-5">
           <Icon type="open" />
-          <div className="text-base text-center">Virtual</div>
+          <div className="text-base text-center my-3 text-gray-800">Virtual</div>
           <div className="text-center text-xs text-gray-400">
             Nulla facilisi. Donec aliquam leo sed eros consectetur, vel
           </div>
         </RadioSegment>
         <RadioSegment name="in-person">
           <Icon type="private" />
-          <div className="text-base text-center">In person</div>
+          <div className="text-base text-center my-3 text-gray-800">In person</div>
           <div className="text-center text-xs text-gray-400">
             Nulla facilisi. Donec aliquam leo sed eros consectetur, vel
           </div>
         </RadioSegment>
       </RadioGroup>
-      <div className="font-semibold text-xl mt-14 mb-5">
+      <div className="font-semibold text-xl mt-9 mb-5 tracking-wide text-gray-800">
         When
       </div>
       <div className="block text-base font-medium text-gray-500 mb-3">

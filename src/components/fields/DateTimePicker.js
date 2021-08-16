@@ -22,7 +22,7 @@ function DateTimePicker(props) {
             showTimeSelect
             dateFormat="Pp"
             placeholderText={placeholder}
-            className="py-2.5 px-5 rounded-md focus:border-indigo-500 border border-gray-200 focus:outline-none placeholder-gray-400 text-gray-600 sm:text-sm w-full"
+            className="py-2.5 px-5 rounded-md focus:border-indigo-500 border border-gray-200 focus:outline-none placeholder-gray-400 text-gray-600 sm:text-sm w-full appearance-none"
           />
         )}
       />

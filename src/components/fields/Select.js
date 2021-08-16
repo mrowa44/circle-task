@@ -35,7 +35,9 @@ function Select(props) {
           </option>
         ))}
       </select>
-      <Icon type="chevron" className="absolute right-0 mr-4 top-1/2 transform -translate-y-1/2" />
+      <div className="absolute right-0 mr-4 top-1/2 transform -translate-y-1/2">
+        <Icon type="chevron" />
+      </div>
     </label>
   );
 }

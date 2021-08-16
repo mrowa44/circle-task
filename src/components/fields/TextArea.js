@@ -22,7 +22,7 @@ function TextArea(props) {
         id={name}
         name={name}
         placeholder={placeholder}
-        className="py-4 px-5 sm:text-sm w-full h-40 rounded-md border border-gray-200 focus:outline-none focus:border-indigo-500 mb-8"
+        className="py-4 px-5 sm:text-sm w-full h-40 rounded-md border border-gray-200 focus:outline-none focus:border-indigo-500 mb-8 appearance-none text-gray-600"
       />
     </>
   );
