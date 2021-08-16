@@ -14,25 +14,23 @@ const ICONS = {
 };
 
 function Icon(props) {
-  const { type, alt, className } = props;
+  const { type, alt } = props;
   const src = ICONS[type];
 
   if (!src) {
     return null;
   }
 
-  return <img src={ICONS[type]} alt={alt} className={className} />;
+  return <img src={ICONS[type]} alt={alt} />;
 }
 
 Icon.propTypes = {
   alt: PropTypes.string,
-  className: PropTypes.string,
   type: PropTypes.oneOf(Object.keys(ICONS)).isRequired,
 };
 
 Icon.defaultProps = {
   alt: 'icon',
-  className: '',
 };
 
 export default Icon;
