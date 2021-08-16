@@ -24,7 +24,7 @@ function Icon(props) {
 
 Icon.propTypes = {
   alt: PropTypes.string,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(Object.keys(ICONS)).isRequired,
 };
 
 Icon.defaultProps = {
