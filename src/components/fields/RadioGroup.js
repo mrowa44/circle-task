@@ -1,14 +1,14 @@
 import React from 'react';
-import { useController } from 'react-hook-form';
 import PropTypes from 'prop-types';
+import { useController, useFormContext } from 'react-hook-form';
 
 function RadioGroup(props) {
   const {
     children,
-    control,
     name,
     rules,
   } = props;
+  const { control } = useFormContext();
   const {
     field,
     fieldState: { error },
@@ -38,7 +38,6 @@ function RadioGroup(props) {
 
 RadioGroup.propTypes = {
   children: PropTypes.node.isRequired,
-  control: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   name: PropTypes.string.isRequired,
   rules: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };

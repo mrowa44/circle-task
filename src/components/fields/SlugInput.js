@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useFormContext } from 'react-hook-form';
 
 const BASE_URL = 'yourdomain.com';
 
@@ -8,8 +9,8 @@ function SlugInput(props) {
     name,
     label,
     placeholder,
-    register,
   } = props;
+  const { register } = useFormContext();
   return (
     <>
       <label
@@ -38,7 +39,6 @@ SlugInput.propTypes = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
-  register: PropTypes.func.isRequired,
 };
 
 export default SlugInput;
