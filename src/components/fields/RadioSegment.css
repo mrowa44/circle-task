@@ -7,6 +7,18 @@
   @apply border-indigo-500;
 }
 
+.radio-segment--spaced {
+  @apply mr-2 sm:mr-5;
+}
+
 .radio-segment__input {
   @apply hidden;
+}
+
+.radio-segment__title {
+  @apply text-base text-center my-3 text-gray-800;
+}
+
+.radio-segment__text {
+  @apply text-center text-xs text-gray-400;
 }

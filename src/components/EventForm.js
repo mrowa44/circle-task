@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Button from './Button';
-import Icon from './Icon';
 import Form from './Form';
 import TextField from './fields/TextField';
 import RadioSegment from './fields/RadioSegment';
@@ -45,20 +44,19 @@ function EventForm(props) {
           required: { value: true, message: 'Where is required' },
         }}
       >
-        <RadioSegment name="virtual" className="mr-2 sm:mr-5">
-          <Icon type="open" />
-          <div className="text-base text-center my-3 text-gray-800">Virtual</div>
-          <div className="text-center text-xs text-gray-400">
-            Nulla facilisi. Donec aliquam leo sed eros consectetur, vel
-          </div>
-        </RadioSegment>
-        <RadioSegment name="in-person">
-          <Icon type="private" />
-          <div className="text-base text-center my-3 text-gray-800">In person</div>
-          <div className="text-center text-xs text-gray-400">
-            Nulla facilisi. Donec aliquam leo sed eros consectetur, vel
-          </div>
-        </RadioSegment>
+        <RadioSegment
+          spaced
+          name="virtual"
+          icon="open"
+          title="Virtual"
+          text="Nulla facilisi. Donec aliquam leo sed eros consectetur, vel"
+        />
+        <RadioSegment
+          name="in-person"
+          icon="private"
+          title="In person"
+          text="Nulla facilisi. Donec aliquam leo sed eros consectetur, vel"
+        />
       </RadioGroup>
       <div className="event-form__subtitle">
         When

@@ -6,7 +6,7 @@ import open from '../assets/open_icon.svg';
 import privateIcon from '../assets/private icon.svg';
 import chevron from '../assets/chevron.svg';
 
-const ICONS = {
+export const ICONS = {
   cross,
   open,
   private: privateIcon,
