@@ -1,9 +1,9 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
 import PropTypes from 'prop-types';
 
 import Button from './Button';
 import Icon from './Icon';
+import Form from './Form';
 import TextField from './fields/TextField';
 import RadioSegment from './fields/RadioSegment';
 import RadioGroup from './fields/RadioGroup';
@@ -20,40 +20,26 @@ function EventForm(props) {
     onSubmit,
     submitLabel,
   } = props;
-  const {
-    control,
-    formState: { errors },
-    handleSubmit,
-    register,
-    reset,
-    watch,
-  } = useForm({
-    mode: 'onBlur',
-  });
-
-  React.useEffect(() => {
-    if (initialValues) {
-      reset(initialValues);
-    }
-  }, [initialValues, reset]);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-start px-4 sm:px-0">
+    <Form
+      onSubmit={onSubmit}
+      formProps={{ mode: 'onBlur' }}
+      initialValues={initialValues}
+      className="flex flex-col items-start px-4 sm:px-0"
+    >
       <TextField
         name="name"
         label="Event name"
         placeholder="Event name"
-        register={register}
         rules={{
           required: { value: true, message: 'Event name is required' },
         }}
-        error={errors.name}
       />
       <div className="font-semibold text-xl mt-9 mb-5 tracking-wide text-gray-800">
         Where
       </div>
       <RadioGroup
-        control={control}
         name="place"
         rules={{
           required: { value: true, message: 'Where is required' },
@@ -85,7 +71,6 @@ function EventForm(props) {
           <DateTimePicker
             placeholder="Date & time"
             name="datetime"
-            control={control}
             className="mr-5"
           />
         </div>
@@ -94,8 +79,6 @@ function EventForm(props) {
             options={DURATION_OPTIONS}
             name="duration"
             placeholder="Duration"
-            register={register}
-            watch={watch}
           />
         </div>
       </div>
@@ -103,18 +86,16 @@ function EventForm(props) {
         name="description"
         label="Description"
         placeholder="Write a summary about your event"
-        register={register}
       />
       <SlugInput
         label="Slug"
         name="slug"
         placeholder="custom URL"
-        register={register}
       />
       <Button variant="primary" type="submit">
         {submitLabel}
       </Button>
-    </form>
+    </Form>
   );
 }
 

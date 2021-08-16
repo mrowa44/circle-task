@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { Controller } from 'react-hook-form';
+import { Controller, useFormContext } from 'react-hook-form';
 
 import Icon from '../Icon';
 
 function DateTimePicker(props) {
-  const { placeholder, control, name } = props;
+  const { placeholder, name } = props;
+  const { control } = useFormContext();
   return (
     <div className="flex">
       <Controller
@@ -35,7 +36,6 @@ function DateTimePicker(props) {
 }
 
 DateTimePicker.propTypes = {
-  control: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
 };
