@@ -26,8 +26,8 @@ function PageLayout(props) {
           </Button>
         </div>
       </header>
-      <main className="bg-gray-100 sm:px-0 flex-1">
-        <div className="max-w-xl m-auto mt-16 pb-40">
+      <main className="bg-gray-100 flex-1">
+        <div className="sm:max-w-xl m-auto mt-14 pb-40">
           {children}
         </div>
       </main>
