@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Button from './components/Button';
-import crossIcon from './assets/cross.svg';
+import Icon from './components/Icon';
 
 function PageLayout(props) {
   const {
@@ -15,7 +15,7 @@ function PageLayout(props) {
     <div className="min-h-full h-full flex flex-col">
       <header className="h-60 px-4 sm:px-0">
         <button type="button" className="block ml-auto mt-5 sm:mr-5 hover:opacity-70">
-          <img src={crossIcon} alt="close" />
+          <Icon type="cross" alt="close" />
         </button>
         <div className="max-w-xl m-auto mt-20 mb-8 flex justify-between">
           <h1 className="text-4xl font-bold text-gray-800">
